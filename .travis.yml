@@ -17,6 +17,7 @@ jobs:
       go: 1.12.x
       script:
         - cargo install cargo-fuzz
+        - cargo fuzz run fuzz_parse_complex
         - ./ci/fuzzit.sh regression
 
     - stage: Fuzzit (Fuzzing)
@@ -24,4 +25,5 @@ jobs:
       go: 1.12.x
       script:
         - cargo install cargo-fuzz
+        - cargo fuzz run fuzz_parse_complex
         - ./ci/fuzzit.sh fuzzing
