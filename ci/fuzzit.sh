@@ -7,7 +7,9 @@ wget -q -O fuzzit https://github.com/fuzzitdev/fuzzit/releases/download/v2.4.29/
 chmod a+x fuzzit
 
 if [ $1 == "fuzzing" ]; then
-    ./fuzzit create job fuzzitdev/rust-parse-complex ./fuzz/target/x86_64-unknown-linux-gnu/debug/fuzz_parse_complex
+    ./fuzzit create job fuzzitdev/rust-parse-complex ./fuzz/target/x86_64-unknown-linux-gnu/release/fuzz_parse_complex
+    
 else
-    ./fuzzit create job --type local-regression fuzzitdev/rust-parse-complex ./fuzz/target/x86_64-unknown-linux-gnu/debug/fuzz_parse_complex
+    ./fuzzit create job --type local-regression fuzzitdev/rust-parse-complex ./fuzz/target/x86_64-unknown-linux-gnu/release/fuzz_parse_complex
+    
 fi
